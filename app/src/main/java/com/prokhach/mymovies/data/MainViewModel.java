@@ -18,6 +18,7 @@ public class MainViewModel extends AndroidViewModel {
     public MainViewModel(@NonNull Application application) {
         super(application);
         database = MovieDatabase.getInstance(getApplication());
+        movies = database.moviesDao().getAllMovies();
     }
 
     public Movie getMovieById(int id) {
