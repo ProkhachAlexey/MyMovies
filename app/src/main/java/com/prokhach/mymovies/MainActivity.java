@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -54,6 +55,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         switchSort.setChecked(false);
+
+        movieAdapter.setOnPosterClickListener(new MovieAdapter.OnPosterClickListener() {
+            @Override
+            public void onPosterClick(int position) {
+                Movie movie = movieAdapter.getMovies().get(position);
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                intent.putExtra("id", movie.getId());
+                startActivity(intent);
+            }
+        });
 
         textViewPopularity.setOnClickListener(new View.OnClickListener() {
             @Override
