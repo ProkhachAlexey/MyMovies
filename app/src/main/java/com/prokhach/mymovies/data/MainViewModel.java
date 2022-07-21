@@ -36,7 +36,7 @@ public class MainViewModel extends AndroidViewModel {
 
     public FavouriteMovie getFavouriteMovieById(int id) {
         try {
-            return new GetFavouriteTask().execute(id).get();
+            return new GetFavouriteMovieTask().execute(id).get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -83,7 +83,7 @@ public class MainViewModel extends AndroidViewModel {
         }
     }
 
-    private static class GetFavouriteTask extends AsyncTask<Integer, Void, FavouriteMovie> {
+    private static class GetFavouriteMovieTask extends AsyncTask<Integer, Void, FavouriteMovie> {
         @Override
         protected FavouriteMovie doInBackground(Integer... integers) {
             if (integers != null && integers.length > 0) {
