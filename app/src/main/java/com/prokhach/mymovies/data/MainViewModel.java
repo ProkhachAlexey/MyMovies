@@ -66,7 +66,7 @@ public class MainViewModel extends AndroidViewModel {
     }
 
     public void deleteFavouriteMovie(FavouriteMovie favouriteMovie) {
-        new DeleteFavouriteTask() .execute(favouriteMovie);
+        new DeleteFavouriteTask().execute(favouriteMovie);
     }
 
     public LiveData<List<Movie>> getMovies() {
@@ -126,7 +126,7 @@ public class MainViewModel extends AndroidViewModel {
         @Override
         protected Void doInBackground(FavouriteMovie... favouriteMovies) {
             if (favouriteMovies != null && favouriteMovies.length > 0) {
-                database.moviesDao().deleteMovie(favouriteMovies[0]);
+                database.moviesDao().deleteFavouriteMovie(favouriteMovies[0]);
             }
             return null;
         }
