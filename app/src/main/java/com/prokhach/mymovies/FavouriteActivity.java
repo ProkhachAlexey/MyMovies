@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.prokhach.mymovies.adapter.MovieAdapter;
 import com.prokhach.mymovies.data.FavouriteMovie;
 import com.prokhach.mymovies.data.MainViewModel;
 import com.prokhach.mymovies.data.Movie;

@@ -1,4 +1,4 @@
-package com.prokhach.mymovies;
+package com.prokhach.mymovies.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.prokhach.mymovies.R;
 import com.prokhach.mymovies.data.Movie;
 import com.squareup.picasso.Picasso;
 
@@ -24,11 +25,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         movies = new ArrayList<>();
     }
 
-    interface OnPosterClickListener {
+    public interface OnPosterClickListener {
         void onPosterClick(int position);
     }
 
-    interface OnReachEndListener {
+    public interface OnReachEndListener {
         void onReachEnd();
     }
 

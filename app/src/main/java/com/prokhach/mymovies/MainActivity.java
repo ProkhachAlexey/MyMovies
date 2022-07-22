@@ -10,17 +10,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.prokhach.mymovies.adapter.MovieAdapter;
 import com.prokhach.mymovies.data.MainViewModel;
 import com.prokhach.mymovies.data.Movie;
 import com.prokhach.mymovies.utils.JSONUtils;
