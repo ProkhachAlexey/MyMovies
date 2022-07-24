@@ -36,7 +36,7 @@ public class NetworkUtils {
     private static final String LANGUAGE_VALUE = "ru-RU";
     private static final String SORT_BY_POPULARITY = "popularity.desc";
     private static final String SORT_BY_TOP_RATED = "vote_average.desc";
-    private static final String MIN_VOTE_COUNT = "500";
+    private static final String MIN_VOTE_COUNT = "1000";
 
     public static final int POPULARITY = 0;
     public static final int TOP_RATED = 1;
@@ -129,6 +129,15 @@ public class NetworkUtils {
     public static class JSONLoader extends AsyncTaskLoader<JSONObject> {
 
         private Bundle bundle;
+        private OnStartLoaderListener onStartLoaderListener;
+
+        public interface OnStartLoaderListener {
+            void onStartLoading();
+        }
+
+        public void setOnStartLoaderListener(OnStartLoaderListener onStartLoaderListener) {
+            this.onStartLoaderListener = onStartLoaderListener;
+        }
 
         public JSONLoader(@NonNull Context context, Bundle bundle) {
             super(context);
@@ -138,6 +147,9 @@ public class NetworkUtils {
         @Override
         protected void onStartLoading() {
             super.onStartLoading();
+            if (onStartLoaderListener != null) {
+                 onStartLoaderListener.onStartLoading();
+            }
             forceLoad();
         }
 

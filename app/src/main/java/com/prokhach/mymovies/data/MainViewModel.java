@@ -121,7 +121,7 @@ public class MainViewModel extends AndroidViewModel {
             return null;
         }
     }
-    
+
     private static class DeleteFavouriteTask extends AsyncTask<FavouriteMovie, Void, Void> {
         @Override
         protected Void doInBackground(FavouriteMovie... favouriteMovies) {

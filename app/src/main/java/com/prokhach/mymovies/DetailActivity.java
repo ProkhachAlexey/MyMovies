@@ -1,11 +1,5 @@
 package com.prokhach.mymovies;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +10,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.prokhach.mymovies.adapter.ReviewAdapter;
 import com.prokhach.mymovies.adapter.TrailerAdapter;
@@ -110,7 +110,7 @@ public class DetailActivity extends AppCompatActivity {
         recyclerViewReviews = findViewById(R.id.recyclerViewReviews);
         trailerAdapter = new TrailerAdapter();
         reviewAdapter = new ReviewAdapter();
-        
+
         trailerAdapter.setOnTrailerClickListener(new TrailerAdapter.OnTrailerClickListener() {
             @Override
             public void onTrailerClick(String url) {
